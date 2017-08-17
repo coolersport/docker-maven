@@ -1,8 +1,8 @@
 FROM anapsix/alpine-java:8_server-jre_unlimited
 
-ARG MAVEN_VERSION=3.5.0
+ARG MAVEN_VERSION=3.2.5
 ARG USER_HOME_DIR="/root"
-ARG SHA=beb91419245395bd69a4a6edad5ca3ec1a8b64e41457672dc687c173a495f034
+ARG SHA=8c190264bdf591ff9f1268dc0ad940a2726f9e958e367716a09b8aaa7e74a755
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 RUN apk add --update tar curl \
