@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM anapsix/alpine-java:8_jdk_unlimited
 
 ARG MAVEN_VERSION=3.2.5
 ARG USER_HOME_DIR="/root"
