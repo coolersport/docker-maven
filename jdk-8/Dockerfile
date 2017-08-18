@@ -5,8 +5,13 @@ ARG USER_HOME_DIR="/root"
 ARG SHA=beb91419245395bd69a4a6edad5ca3ec1a8b64e41457672dc687c173a495f034
 ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
+# upgrade tar, install curl and git
 RUN apk add --update tar curl git \
   && rm -rf /var/cache/apk/* \
+# install docker to run docker commands inside this container
+  && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.03.1-ce.tgz \
+  && tar --strip-components=1 -xvzf docker-17.03.1-ce.tgz -C /usr/local/bin \
+# install maven
   && mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha256sum -c - \
