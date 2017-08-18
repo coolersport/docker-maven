@@ -1,6 +1,13 @@
 docker-maven
 ============
 
+# Quick commands
+
+    // usual maven command
+    docker run -it --rm -v "$PWD":/src:z -w /src coolersport/maven:3.2.5-jdk-8 mvn clean install
+    // with ability to build docker images
+    docker run --privileged -it --rm -v /var/run:/var/run:z -v "$PWD":/src:z -w /src coolersport/maven:3.2.5-jdk-8 mvn clean install
+
 # Supported tags and respective Dockerfile links
 
 * [jdk-7](https://github.com/carlossg/docker-maven/blob/master/jdk-7/Dockerfile)
