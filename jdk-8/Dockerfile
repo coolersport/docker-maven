@@ -9,8 +9,8 @@ ARG BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 RUN apk add --update tar curl git \
   && rm -rf /var/cache/apk/* \
 # install docker to run docker commands inside this container
-  && curl -fsSLO https://get.docker.com/builds/Linux/x86_64/docker-17.03.1-ce.tgz \
-  && tar --strip-components=1 -xvzf docker-17.03.1-ce.tgz -C /usr/local/bin \
+  && curl -fsSLO https://download.docker.com/linux/static/stable/x86_64/docker-18.09.4.tgz \
+  && tar --strip-components=1 -xvzf docker-18.09.4.tgz -C /usr/local/bin \
 # install maven
   && mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
